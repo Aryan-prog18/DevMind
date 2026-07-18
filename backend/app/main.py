@@ -7,12 +7,14 @@ app = FastAPI(title="DevMind API", version="0.1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://dev-mind-lxfxce4ru-devmind1.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 @app.get("/", tags=["root"])
 async def root() -> dict[str, str]:
