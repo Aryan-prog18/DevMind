@@ -64,7 +64,7 @@ export default function ChatWindow({
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/chat/repository/stream",
+        "https://devmind-j0x5.onrender.com/api/chat/repository/stream",
         {
           method: "POST",
           headers: {

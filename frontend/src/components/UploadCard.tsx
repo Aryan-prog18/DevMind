@@ -87,7 +87,7 @@ export default function UploadCard({
       setIsAnalyzingRepository(true)
 
       const response = await fetch(
-        "http://localhost:8000/api/repository/analyze",
+        "https://devmind-j0x5.onrender.com/api/repository/analyze",
         {
           method: "POST",
           headers: {
