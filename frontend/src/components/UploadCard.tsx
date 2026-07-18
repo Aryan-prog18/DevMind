@@ -61,10 +61,10 @@ export default function UploadCard({
   files,
   setFiles,
 
-  summary,
+  summary : _summary,
   setSummary,
 
-  sessionId,
+  sessionId : _sessionId,
   setSessionId,
 
   isRepositoryReady,

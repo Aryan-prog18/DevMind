@@ -5,11 +5,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import UploadCard from "../components/UploadCard";
 
-const projects = [
-  "Acme storefront",
-  "Design system",
-  "Mobile app",
-];
+
 
 export default function Dashboard() {
   // ------------------------
@@ -43,6 +39,14 @@ const [isRepositoryReady, setIsRepositoryReady] = useState(false);
 
 const [isAnalyzingRepository, setIsAnalyzingRepository] =
   useState(false);
+  const projects = isRepositoryReady
+  ? [
+      {
+        id: sessionId,
+        name: repositoryName,
+      },
+    ]
+  : [];
 
   // ------------------------
   // Backend Health Check

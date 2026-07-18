@@ -64,8 +64,8 @@ def stream_chat_with_repository(
                 context=context,
                 question=request.question,
             ):
-             print(repr(chunk))
-             yield f"data: {chunk}\n\n"
+                print(repr(chunk))
+                yield f"data: {chunk}\n\n"
 
             yield "data: [DONE]\n\n"
 

@@ -14,11 +14,6 @@ interface Message {
   content: string;
 }
 
-interface ChatResponse {
-  answer?: string;
-  detail?: string;
-}
-
 const SparkleIcon = () => (
   <svg
     viewBox="0 0 24 24"
@@ -43,34 +38,6 @@ export default function ChatWindow({
   const [question, setQuestion] = useState("");
   const [isThinking, setIsThinking] = useState(false);
 
-  async function typeMessage(text: string) {
-  let current = "";
-
-  setMessages((prev) => [
-    ...prev,
-    {
-      role: "assistant",
-      content: "",
-    },
-  ]);
-
-  for (const char of text) {
-    current += char;
-
-    setMessages((prev) => {
-      const updated = [...prev];
-
-      updated[updated.length - 1] = {
-        role: "assistant",
-        content: current,
-      };
-
-      return updated;
-    });
-
-    await new Promise((resolve) => setTimeout(resolve, 8));
-  }
-}
 
   async function sendMessage() {
     const trimmedQuestion = question.trim();
@@ -265,9 +232,7 @@ console.log(assistantResponse);
       ].map((prompt) => (
         <button
           key={prompt}
-          onClick={() => {
-    setQuestion(prompt);
-}}
+          onClick={() => setQuestion(prompt)}
           className="rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-sm transition hover:border-cyan-400 hover:bg-slate-700"
         >
           {prompt}

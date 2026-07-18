@@ -1,12 +1,10 @@
 type Project = {
+  id: string;
   name: string;
-  sessionId: string;
-};
-
+}
 type SidebarProps = {
   projects: Project[];
-  onSelectProject: (project: Project) => void;
-};
+}
 
 const FolderIcon = () => (
   <svg
@@ -40,7 +38,6 @@ const PlusIcon = () => (
 
 export default function Sidebar({
   projects,
-  onSelectProject,
 }: SidebarProps) {
   return (
     <aside className="flex w-full shrink-0 flex-col border-b border-white/8 bg-[#0c1019] px-5 py-5 lg:min-h-screen lg:w-64 lg:border-r lg:border-b-0 lg:px-4">
@@ -75,8 +72,8 @@ export default function Sidebar({
         ) : (
           projects.map((project, index) => (
             <button
-              key={project.sessionId}
-              onClick={() => onSelectProject(project)}
+              key={project.id}
+              onClick={() => {}}
               className={`flex min-w-max items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm transition ${
                 index === 0
                   ? "bg-cyan-400/10 text-cyan-200"
