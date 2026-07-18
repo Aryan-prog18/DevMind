@@ -57,7 +57,7 @@ const [isAnalyzingRepository, setIsAnalyzingRepository] =
 
     async function checkBackendHealth() {
       try {
-        const response = await fetch("http://localhost:8000/health", {
+        const response = await fetch("https://devmind-j0x5.onrender.com/health", {
           signal: controller.signal,
         });
 
